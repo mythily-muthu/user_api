@@ -11,15 +11,24 @@ let user = {
 
 }
 //shape of the user object
+// const Userschema = new mongoose.Schema({
+
+//     name: { type: String, required: true },
+//     age: { type: String, required: true },
+//     phone_number: { type: String, required: true },
+//     gender: { type: String, enum: ["male", "female", "others"], required: true },
+//     location: { type: String, required: true },
+// })
+
 const Userschema = new mongoose.Schema({
 
     name: { type: String, required: true },
-    age: { type: String, required: true },
-    phone_number: { type: String, required: true },
-    gender: { type: String, enum: ["male", "female", "others"], required: true },
-    location: { type: String, required: true },
-})
 
+    email: { type: String, required: true, unique: true },
+    gender: { type: String, enum: ["male", "female", "others"], required: true },
+    status: { type: String, enum: ["active", "inactive"], required: true },
+})
 //to create user model
 const User = mongoose.model("User", Userschema)
 
+module.exports = User

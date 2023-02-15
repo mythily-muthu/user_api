@@ -10,12 +10,11 @@ router.post("/", async (req, res) => {
         console.log("in add user");
         console.log("body:", req.body);
         let newUser = new User({
-            user_image: req.body.user_image,
+
             name: req.body.name,
-            age: req.body.age,
-            phone_number: req.body.phone_number,
+            email: req.body.email,
             gender: req.body.gender,
-            location: req.body.location,
+            status: req.body.status,
         })
         //to save to db
         await newUser.save()
