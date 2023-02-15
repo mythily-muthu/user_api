@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 const user_routes = require('./routes/user.routes');
+const products_routes = require('./routes/product.routes');
 const PORT = 4000;
 const DB_URL = "mongodb+srv://mythilymuthu:mythu123@cluster0.g0mryfy.mongodb.net/users?retryWrites=true&w=majority"
 const other_url = "mongodb+srv://mythilymuthu:mythu123@cluster0.g0mryfy.mongodb.net/products?retryWrites=true&w=majority"
@@ -33,7 +34,7 @@ connection.once("open", () => {
 
 //routes
 app.use("/api/users", user_routes)
-
+app.use("/api/products", products_routes)
 
 
 app.listen(PORT, () => {
