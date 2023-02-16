@@ -74,7 +74,7 @@ router.delete("/:id", async (req, res) => {
         console.log("in delete product");
         let product_id = req.params.id;
         await Products.findByIdAndDelete(product_id);
-        res.status(200).send({ message: "successfully deleted" });
+        res.status(200).send({ message: "successfully deleted " });
 
     } catch (error) {
         res.status(404).send({ error: error.message })
