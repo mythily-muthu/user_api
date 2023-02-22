@@ -8,10 +8,10 @@ router.post("/", async (req, res) => {
 
         let newCat = new Cats({
             image_url: req.body.image_url,
-            Bread_Name: req.body.Bread_Name,
-            Price: req.body.Price,
-            Nationality: req.body.Nationality,
-            Description: req.body.Description,
+            breed_name: req.body.breed_name,
+            price: req.body.price,
+            nationality: req.body.nationality,
+            description: req.body.description,
         })
         await newCat.save()
         res.status(201).send({ message: "cat created  successfully" })
